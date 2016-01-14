@@ -1,0 +1,29 @@
+if(player.attackingX >= zom.getX() && player.attackingY >= zom.getY() && player.attackingX <= zom.getX() + 8 && player.attackingY <= zom.getY() + 16 && player.attacking)
+			{
+				switch(player.getDir())
+				{
+				case 0 : zom.getDamage(random.nextInt(20 - 15) + 15, this); zom.setY(zom.getY() + 10); break;
+				case 1 : zom.getDamage(random.nextInt(20 - 15) + 15, this); zom.setY(zom.getY() - 10); break;
+				case 2 : zom.getDamage(random.nextInt(20 - 15) + 15, this); zom.setX(zom.getX() + 10); break;
+				case 3 : zom.getDamage(random.nextInt(20 - 15) + 15, this); zom.setX(zom.getX() - 10); break;
+				}
+				pts += 50;
+			}
+			for(Shot shot : playerShot) if(shot.x > zom.getX() && shot.y > zom.getY() && shot.x < zom.getX() + 8 && shot.y < zom.getY() + 16)
+			{
+				if(player.weapon == 1) switch(shot.pos)
+				{
+				case 0 : zom.getDamage(random.nextInt(25 - 15) + 15, this); zom.setY(zom.getY() + 10); break;
+				case 1 : zom.getDamage(random.nextInt(25 - 15) + 15, this); zom.setY(zom.getY() - 10); break;
+				case 2 : zom.getDamage(random.nextInt(25 - 15) + 15, this); zom.setX(zom.getX() + 10); break;
+				case 3 : zom.getDamage(random.nextInt(25 - 15) + 15, this); zom.setX(zom.getX() - 10); break;
+				} else switch(shot.pos)
+				{
+				case 0 : zom.getDamage(random.nextInt(50 - 30) + 30, this); zom.setY(zom.getY() + 10); break;
+				case 1 : zom.getDamage(random.nextInt(50 - 30) + 30, this); zom.setY(zom.getY() - 10); break;
+				case 2 : zom.getDamage(random.nextInt(50 - 30) + 30, this); zom.setX(zom.getX() + 10); break;
+				case 3 : zom.getDamage(random.nextInt(50 - 30) + 30, this); zom.setX(zom.getX() - 10); break;
+				}
+				shot.visible = false;
+				pts += 20;
+			}
