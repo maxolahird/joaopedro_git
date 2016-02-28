@@ -79,8 +79,8 @@ public class Player {
 		if(x < 0) x = 0;
 		if(y < 0) y = 0;
 		if(y > 160) y = 160;
-		
-		HP = 100;
+		//Para colocar a vida infinita, remova essas barras
+		//HP = 100;
 		if(invencible) invencibleTime++; else invencibleTime = 0;
 		if(invencibleTime > 60) invencible = false;
 		
